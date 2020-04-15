@@ -15,7 +15,6 @@ source:
 build:
   merge_build_host: true  # [win]
   number: 0
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,6 +36,8 @@ requirements:
     - r-rcpp >=0.12.8
     - r-norm
     - r-truncnorm
+    - r-missforest
+    - r-missmda
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -44,6 +45,8 @@ requirements:
     - r-rcpp >=0.12.8
     - r-norm
     - r-truncnorm
+    - r-missforest
+    - r-missmda
 
 test:
   commands:
