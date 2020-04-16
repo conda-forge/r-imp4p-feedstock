@@ -1,4 +1,4 @@
-{% set version = "0.8" %}
+{% set version = "0.9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/imp4p_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/imp4p/imp4p_{{ version }}.tar.gz
-  sha256: 66afa7ad228807b317df5519130faa915d7a4daefa9c05f0e02b5834ee37224c
+  sha256: 7cb3aac214314b5ad748952e483e7e361e608019ec42b04e1cd6d2aa111c18fd
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
-  skip: True  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,6 +36,8 @@ requirements:
     - r-rcpp >=0.12.8
     - r-norm
     - r-truncnorm
+    - r-missforest
+    - r-missmda
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -44,6 +45,8 @@ requirements:
     - r-rcpp >=0.12.8
     - r-norm
     - r-truncnorm
+    - r-missforest
+    - r-missmda
 
 test:
   commands:
@@ -53,10 +56,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=imp4p
   license: GPL-3
-  summary: Functions to analyse missing value mechanisms and to impute data sets in the context
-    of bottom-up MS-based proteomics.
+  summary: Functions to analyse missing value mechanisms and to impute data sets in the context of bottom-up MS-based proteomics.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
