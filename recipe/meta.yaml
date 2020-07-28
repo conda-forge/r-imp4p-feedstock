@@ -40,7 +40,7 @@ requirements:
     - r-truncnorm
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-iso
     - r-rcpp >=0.12.8
     - r-missforest
