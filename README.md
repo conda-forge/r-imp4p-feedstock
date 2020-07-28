@@ -3,9 +3,9 @@ About r-imp4p
 
 Home: https://CRAN.R-project.org/package=imp4p
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Functions to analyse missing value mechanisms and to impute data sets in the context of bottom-up MS-based proteomics.
 
