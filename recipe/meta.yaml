@@ -1,4 +1,4 @@
-{% set version = "1.0" %}
+{% set version = "1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/imp4p_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/imp4p/imp4p_{{ version }}.tar.gz
-  sha256: 091ebc8ccb7c3f3284a945bec50552e8d78195c992392968506c075a1f41deb2
+  sha256: aefd3aba2ee8596d25eab9c20f763feb8068bb8ce8763945e34ebe01b1a383fe
 
 build:
   merge_build_host: true  # [win]
