@@ -3,7 +3,7 @@
 
 package:
   name: r-imp4p
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -34,16 +38,16 @@ requirements:
     - r-base
     - r-iso
     - r-rcpp >=0.12.8
-    - r-missforest
     - r-missmda
+    - r-missranger
     - r-norm
     - r-truncnorm
   run:
     - r-base
     - r-iso
     - r-rcpp >=0.12.8
-    - r-missforest
     - r-missmda
+    - r-missranger
     - r-norm
     - r-truncnorm
 
